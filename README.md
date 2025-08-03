@@ -29,7 +29,3 @@ Follow these steps to set up and run the bot:
 ## Support
 
 If you have questions or encounter issues, open an issue on GitHub or contact me on Discord: **bigbrainmatt**
-
----
-
-**Happy coding!**
