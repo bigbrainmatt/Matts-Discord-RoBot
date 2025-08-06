@@ -3,7 +3,7 @@ from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
 import asyncio
 
-from bot import bot  # Assuming 'bot' is the same instance running your Discord bot
+from bot import bot
 
 app = Flask(__name__)
 limiter = Limiter(get_remote_address, app=app, default_limits=["10 per minute"])
