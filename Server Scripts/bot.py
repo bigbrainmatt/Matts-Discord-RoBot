@@ -2,6 +2,7 @@ import discord
 import os
 from discord.ext import commands
 from dotenv import load_dotenv
+from database import Database
 
 load_dotenv()
 TOKEN = os.getenv("DISCORD_TOKEN")
@@ -28,11 +29,13 @@ async def load_cogs():
 @bot.event
 async def on_ready():
     print(f"✅ Logged in as {bot.user}")
+
     try:
         await bot.tree.sync()
         print("✅ Synced commands globally")
         guild = discord.Object(id=GUILD_ID)
         await bot.tree.sync(guild=guild)
+        db = Database(guild.id)
         print(f"✅ Commands synchronized to guild {GUILD_ID}")
     except Exception as e:
         print(f"❌ Failed to sync commands: {e}")
