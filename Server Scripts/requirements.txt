@@ -1,5 +1,0 @@
-discord.py
-Flask
-Flask-Limiter
-python-dotenv
-sqlite3
